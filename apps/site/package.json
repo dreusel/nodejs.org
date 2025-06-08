@@ -19,6 +19,7 @@
     "lint:types": "tsc --noEmit",
     "playwright": "playwright test",
     "prebuild": "node --run build:blog-data",
+    "predeploy": "node --run build:blog-data",
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
     "serve": "node --run dev",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
