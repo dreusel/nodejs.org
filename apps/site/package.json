@@ -24,9 +24,9 @@
     "serve": "node --run dev",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
     "sync-orama": "node ./scripts/orama-search/sync-orama-cloud.mjs",
-    "test": "turbo test:unit",
+    "test": "test:unit",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test-coverage-exclude=**/*.test.* --experimental-test-module-mocks --enable-source-maps --import=global-jsdom/register --import=tsx --import=tests/setup.jsx --test **/*.test.*",
-    "test:unit:watch": "cross-env NODE_OPTIONS=\"--watch\" node --run test:unit"
+    "test:unit:watch": "node --run test:unit -- --watch"
   },
   "dependencies": {
     "@heroicons/react": "~2.2.0",

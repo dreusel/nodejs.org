@@ -1,3 +1,6 @@
+# undo staged changes to blog data
+git restore --staged apps/site/public/blog-data.json
+
 # lint and format staged files
 node --run lint:staged
 
