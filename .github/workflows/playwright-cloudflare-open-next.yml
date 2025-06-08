@@ -56,7 +56,7 @@ jobs:
       - name: Get Playwright version
         id: playwright-version
         working-directory: apps/site
-        run: echo "version=$(pnpm exec playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
+        run: echo "version=$(npx playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
 
       - name: Cache Playwright browsers
         id: playwright-cache
@@ -67,11 +67,11 @@ jobs:
 
       - name: Install Playwright Browsers
         working-directory: apps/site
-        run: pnpm exec playwright install --with-deps
+        run: npx playwright install --with-deps
 
       - name: Run Playwright tests
         working-directory: apps/site
-        run: pnpm playwright
+        run: node --run playwright
         env:
           PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW: true
           PLAYWRIGHT_BASE_URL: http://127.0.0.1:8787

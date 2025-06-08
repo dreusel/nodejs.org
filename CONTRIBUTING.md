@@ -106,7 +106,7 @@ for getting things done and landing your contribution.
 
    ```bash
    pnpm install --frozen-lockfile # installs this project's dependencies
-   pnpm dev # starts a development environment
+   node --run dev # starts a development environment
    ```
 
 7. Perform your changes. In case you're unfamiliar with the structure of this repository, we recommend a read on the [Collaborator Guide](./COLLABORATOR_GUIDE.md)
@@ -118,10 +118,10 @@ for getting things done and landing your contribution.
    git merge upstream/main
    ```
 
-9. Run `pnpm format` to confirm that linting and formatting are passing.
+9. Run `node --run format` to confirm that linting and formatting are passing.
 
    ```bash
-   pnpm format
+   node --run format
    ```
 
 10. Once you're happy with your changes, add and commit them to your branch, then push the branch to your fork.
@@ -152,30 +152,30 @@ This repository contains several scripts and commands for performing numerous ta
 <details>
   <summary>Commands for Running & Building the Website</summary>
 
-- `pnpm dev` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
-- `pnpm build` builds the Application on Production mode. The output is by default within `.next` folder.
+- `node --run dev` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
+- `node --run build` builds the Application on Production mode. The output is by default within `.next` folder.
   - This is used for the Node.js Vercel Deployments (Preview & Production)
-- `pnpm deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
+- `node --run deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
   - This is used for the Node.js Legacy Website Server (DigitalOcean)
-- `pnpm start` starts a web server running serving the built content from `pnpm build`
+- `node --run start` starts a web server running serving the built content from `node --run build`
 
 </details>
 
 <details>
   <summary>Commands for Maintenance Tasks and Tests</summary>
 
-- `pnpm lint` runs the linter for all files.
-  - `pnpm lint:fix` attempts to fix any linting errors
-- `pnpm prettier` runs the prettier for all the js files.
-  - `pnpm prettier:fix` attempts to fix any style errors
-- `pnpm format` formats and fixes lints for the whole codebase
-- `pnpm scripts:release-post` generates a release post for the current release
-  - **Usage:** `pnpm scripts:release-post -- --version=vXX.X.X --force`
-- `pnpm storybook` starts Storybook's local server
-- `pnpm storybook:build` builds Storybook as a static web application for publishing
-- `pnpm test` runs all tests locally
-  - `pnpm test:unit` runs unit-tests locally
-  - `pnpm test:ci` runs tests, and outputs data to be parsed by a CI environment
+- `node --run lint` runs the linter for all files.
+  - `node --run lint:fix` attempts to fix any linting errors
+- `node --run prettier` runs the prettier for all the js files.
+  - `node --run prettier:fix` attempts to fix any style errors
+- `node --run format` formats and fixes lints for the whole codebase
+- `node --run scripts:release-post` generates a release post for the current release
+  - **Usage:** `node --run scripts:release-post -- --version=vXX.X.X --force`
+- `node --run storybook` starts Storybook's local server
+- `node --run storybook:build` builds Storybook as a static web application for publishing
+- `node --run test` runs all tests locally
+  - `node --run test:unit` runs unit-tests locally
+  - `node --run test:ci` runs tests, and outputs data to be parsed by a CI environment
 
 </details>
 

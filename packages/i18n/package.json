@@ -14,9 +14,9 @@
   "module": "./lib/index.mjs",
   "types": "./dist/index.d.mts",
   "files": [
-    "locales",
-    "index.js",
     "config.json",
+    "index.js",
+    "locales",
     "types.d.ts"
   ],
   "scripts": {

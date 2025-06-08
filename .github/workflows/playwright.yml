@@ -82,7 +82,7 @@ jobs:
       - name: Get Playwright version
         id: playwright-version
         working-directory: apps/site
-        run: echo "version=$(pnpm exec playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
+        run: echo "version=$(npx playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
 
       - name: Cache Playwright browsers
         id: playwright-cache
@@ -93,11 +93,11 @@ jobs:
 
       - name: Install Playwright Browsers
         working-directory: apps/site
-        run: pnpm exec playwright install --with-deps
+        run: npx playwright install --with-deps
 
       - name: Run Playwright tests
         working-directory: apps/site
-        run: pnpm playwright
+        run: node --run playwright
         env:
           PLAYWRIGHT_BASE_URL: ${{ needs.get-vercel-preview.outputs.url }}
 

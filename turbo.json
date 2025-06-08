@@ -15,14 +15,7 @@
         "lint:js"
       ]
     },
-    "lint:lint-staged": {
-      "dependsOn": [
-        "@node-core/website#lint:md",
-        "@node-core/website#lint:css",
-        "@node-core/website#lint:js"
-      ]
-    },
-    "check-types": {
+    "lint:types": {
       "dependsOn": ["^topo"]
     },
     "topo": {
